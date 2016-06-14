@@ -4,33 +4,21 @@ class App extends React.Component {
 	constructor(){
 		super();
 		this.state = {
-			data: [
-				{
-					"id":1,
-					"name":"Foo",
-					"age":20
-				},{
-					"id":2,
-					"name":"Bar",
-					"age":30					
-				},{
-					"id":3,
-					"name":"Baz",
-					"age":40
-				}
-			]
-			
+			data: 0
 		}
+		this.setNewNumber = this.setNewNumber.bind(this);
 	}
+	
+	setNewNumber() {
+		this.setState({data: this.state.data + 1})
+	}
+	
 	render() {
       return (
          <div>
             <Header/>
-			<table>
-				<tbody>
-					{this.state.data.map((person, i) => <TableRow key={i} data={person} />)}
-				</tbody>
-			</table>
+			<button onClick = {this.setNewNumber}>Increment</button>
+			<Content myNumber = {this.state.data} ></Content>
          </div>
       );
    }
@@ -46,14 +34,41 @@ class Header extends React.Component{
 	}
 }
 
-class TableRow extends React.Component{
+class Content extends React.Component{
+	componentWillMount(){
+		console.log('Will mount!');
+	}
+	
+	componentDidMount(){
+		console.log('Did mount!');
+	}
+	
+	componentWillReceiveProps(newProps){
+		console.log('New props!');
+		console.log(newProps);
+	}
+	
+	shouldComponentUpdate(newProps, newState){
+		return true;
+	}
+	
+	componentWillUpdate(nextProps, newxState){
+		console.log('Will update');
+	}
+	
+	componentDidUpdate(prevProps, prevState){
+		console.log('Did update');
+	}
+	
+	componendWillUnmount(){
+		console.log('Will unmount!');
+	}
+	
 	render(){
-		return(
-			<tr>
-				<td>{this.props.data.id}</td>
-				<td>{this.props.data.name}</td>
-				<td>{this.props.data.age}</td>
-			</tr>
+		return (
+			<div>
+				<h3>{this.props.myNumber}</h3>
+			</div>
 		);
 	}
 }
