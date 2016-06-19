@@ -7,6 +7,9 @@
 	"test": "mocha --compilers js:babel-core/register",
     "start": "webpack-dev-server --hot"
   },
+  "babel": {
+    "presets": ["es2015"]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SeriyBg/sb-react-app.git"
