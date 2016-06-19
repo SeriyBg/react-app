@@ -1,3 +1,5 @@
+//import {expect} from 'chai';
+
 describe('Array', () => {
   describe('#indexOf()', () => {
     it('this test will pass', () => {

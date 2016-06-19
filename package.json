@@ -4,6 +4,7 @@
   "description": "Test react.js application",
   "main": "main.js",
   "scripts": {
+	"test": "mocha --compilers js:babel-core/register",
     "start": "webpack-dev-server --hot"
   },
   "repository": {
