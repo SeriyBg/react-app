@@ -2,7 +2,7 @@
   "name": "sb-react-app",
   "version": "1.0.0",
   "description": "Test react.js application",
-  "main": "main.js",
+  "main": "app/main.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
     "start": "webpack-dev-server --hot"
