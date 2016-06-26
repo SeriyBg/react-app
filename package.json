@@ -38,6 +38,7 @@
     "babel-plugin-transform-runtime": "^6.9.0",
     "babel-preset-react": "^6.5.0",
     "chai": "^3.5.0",
+    "html-webpack-plugin": "^2.21.0",
     "mocha": "^2.5.3"
   }
 }
