@@ -1,23 +1,22 @@
 import React, { PropTypes } from 'react';
 import { transparentBg } from '../styles';
 
-class Prompt extends React.Component{
-  render(){
+function Prompt(props){
     return(
       <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={transparentBg}>
-      <h1>{this.props.header}</h1>
+      <h1>{props.header}</h1>
       <div className="col-sm-12">
-        <form onSubmit={this.props.onSubmitUser}>
+        <form onSubmit={props.onSubmitUser}>
           <div className="form-group">
           <input 
             className="form-control" 
-          placeholder="Github username"
-          onChange={this.props.onUpdateUser}
-          value={this.props.username}
-          type="text" />
+            placeholder="Github username"
+            onChange={props.onUpdateUser}
+            value={props.username}
+            type="text" />
         </div>
         <div className="form-group col-sm-4 col-sm-offset-4">
-            <button className="btn btn-block btn-success">
+          <button className="btn btn-block btn-success">
             Continue
           </button>
         </div>
@@ -25,7 +24,6 @@ class Prompt extends React.Component{
       </div>
       </div>
     );
-  }
 }
 
 Prompt.propTypes = {
