@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { transparentBg } from '../styles';
 
 class Prompt extends React.Component{
@@ -26,6 +26,13 @@ class Prompt extends React.Component{
       </div>
     );
   }
+}
+
+Prompt.propTypes = {
+  onSubmitUser: PropTypes.func.isRequired,
+  onUpdateUser: PropTypes.func.isRequired,
+  header: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired
 }
 
 export default Prompt;
