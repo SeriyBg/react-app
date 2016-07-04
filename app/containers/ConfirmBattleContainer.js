@@ -1,23 +1,23 @@
 import React from 'react';
 import ConfirmBattle from '../components/ConfirmBattle';
 
-class ConfirmBattleContainer extends React.Component{
-  constructor(){
+class ConfirmBattleContainer extends React.Component {
+  constructor() {
     super();
     this.state = {
       isLoading: true,
       playersInfo: []
     }
   }
-  
-  componentDidMount(){
+
+  componentDidMount() {
     var query = this.props.location.query;
   }
-  
-  render(){
-    return(
-      <ConfirmBattle 
-        isLoading={this.state.isLoading} 
+
+  render() {
+    return (
+      <ConfirmBattle
+        isLoading={this.state.isLoading}
         playersInfo={this.state.playersInfo} />
     );
   }
