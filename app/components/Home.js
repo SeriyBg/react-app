@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { transparentBg } from '../styles';
 
-function Home(props) {
+const Home = props => {
   return (
     <div className='jumbotron col-sm-12 text-center' style={transparentBg}>
       <h1>Github battle</h1>
