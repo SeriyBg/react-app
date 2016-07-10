@@ -5,10 +5,20 @@ import { getPlayersInfo } from '../utils/githubHelpers';
 class ConfirmBattleContainer extends React.Component {
   constructor() {
     super();
+    this.handleInitiateBattle = this.handleInitiateBattle.bind(this);
     this.state = {
       isLoading: true,
       playersInfo: []
     }
+  }
+
+  handleInitiateBattle(){
+    this.context.router.push({
+      pathname: '/results',
+      state:{
+        playersInfo: this.state.playersInfo
+      }
+    });
   }
 
   async componentDidMount() {
@@ -28,7 +38,8 @@ class ConfirmBattleContainer extends React.Component {
     return (
       <ConfirmBattle
         isLoading={this.state.isLoading}
-        playersInfo={this.state.playersInfo} />
+        playersInfo={this.state.playersInfo}
+        onInitiateBattle={this.handleInitiateBattle} />
     );
   }
 }
