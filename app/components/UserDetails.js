@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-const UserDetails = (user) => {
+const UserDetails = user => {
   return (
     <div>
       {!!user.score && <li className="list-group-item"><h3>Score: {user.score}</h3></li>}

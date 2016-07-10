@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import { transparentBg, space } from '../styles';
 import UserDetails from './UserDetails';
 import UserDetailsWrapper from './UserDetailsWrapper';
 
-const ConfirmBattle = (props) => {
+const ConfirmBattle = props => {
   return props.isLoading
         ? <p>LOADING</p>
         : (
@@ -33,9 +33,9 @@ const ConfirmBattle = (props) => {
 }
 
 ConfirmBattle.propTypes = {
-  isLoading: React.PropTypes.bool.isRequired,
-  playersInfo: React.PropTypes.array.isRequired,
-  onInitiateBattle: React.PropTypes.func.isRequired
+  isLoading: PropTypes.bool.isRequired,
+  playersInfo: PropTypes.array.isRequired,
+  onInitiateBattle: PropTypes.func.isRequired
 };
 
 export default ConfirmBattle;

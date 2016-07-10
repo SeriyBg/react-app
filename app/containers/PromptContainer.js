@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Prompt from '../components/Prompt';
 
 class PromptContainer extends React.Component {
@@ -49,7 +49,7 @@ class PromptContainer extends React.Component {
 }
 
 PromptContainer.contextTypes = {
-  router: React.PropTypes.object.isRequired
+  router: PropTypes.object.isRequired
 }
 
 export default PromptContainer;

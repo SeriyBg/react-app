@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ConfirmBattle from '../components/ConfirmBattle';
 import { getPlayersInfo } from '../utils/githubHelpers';
 
@@ -45,7 +45,7 @@ class ConfirmBattleContainer extends React.Component {
 }
 
 ConfirmBattleContainer.contextTypes = {
-  router: React.PropTypes.object.isRequired
+  router: PropTypes.object.isRequired
 }
 
 export default ConfirmBattleContainer;
