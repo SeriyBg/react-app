@@ -1,5 +1,6 @@
 import React from 'react';
 import ConfirmBattle from '../components/ConfirmBattle';
+import { getPlayersInfo } from '../utils/githubHelpers';
 
 class ConfirmBattleContainer extends React.Component {
   constructor() {
@@ -10,8 +11,17 @@ class ConfirmBattleContainer extends React.Component {
     }
   }
 
-  componentDidMount() {
-    var query = this.props.location.query;
+  async componentDidMount() {
+    try {
+      const { query } = this.props.location;
+      const players = await getPlayersInfo([query.playerOne, query.playerTwo]);
+      this.setState({
+        isLoading: false,
+        playersInfo: [players[0], players[1]]
+      });
+    } catch (error) {
+      console.warn('Error in componentDidMount', error);
+    }
   }
 
   render() {

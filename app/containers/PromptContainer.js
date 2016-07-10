@@ -28,8 +28,8 @@ class PromptContainer extends React.Component {
       this.context.router.push({
         pathname: '/battle',
         query: {
-        palyerOne: this.props.routeParams.playerOne,
-            playerTwo: this.state.username
+          playerOne: this.props.routeParams.playerOne,
+          playerTwo: this.state.username
         }
       });
     } else {
