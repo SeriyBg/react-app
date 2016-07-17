@@ -4,10 +4,11 @@ import { space } from '../styles';
 import MainContainer from './MainContainer';
 import UserDetails from './UserDetails';
 import UserDetailsWrapper from './UserDetailsWrapper';
+import Loading from './Loading';
 
 const ConfirmBattle = props => {
   return props.isLoading
-        ? <MainContainer><h1>Loading..</h1></MainContainer>
+        ? <Loading />
         : (
           <MainContainer>
             <h1>Confirm Players</h1>

@@ -4,6 +4,7 @@ import { transparentBg, space } from '../styles';
 import MainContainer from './MainContainer';
 import UserDetails from './UserDetails';
 import UserDetailsWrapper from './UserDetailsWrapper';
+import Loading from './Loading';
 
 const Tie = () => {
   return (
@@ -26,11 +27,7 @@ const StartOver = () => {
 
 const Results = (props) => {
   if(props.isLoading){
-    return (
-      <MainContainer>
-        <h1>Loading...</h1>
-      </MainContainer>
-    );
+    return <Loading />;
   }
   if(props.scores[0] === props.scores[1]){
     return (
