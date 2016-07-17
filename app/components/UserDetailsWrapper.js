@@ -10,7 +10,7 @@ const UserDetailsWrapper = (props) => {
 };
 
 UserDetailsWrapper.propTypes = {
-  header: PropTypes.stting.isRequired
+  header: PropTypes.string.isRequired
 };
 
 export default UserDetailsWrapper;
