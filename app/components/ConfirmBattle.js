@@ -1,14 +1,15 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
-import { transparentBg, space } from '../styles';
+import { space } from '../styles';
+import MainContainer from './MainContainer';
 import UserDetails from './UserDetails';
 import UserDetailsWrapper from './UserDetailsWrapper';
 
 const ConfirmBattle = props => {
   return props.isLoading
-        ? <p>LOADING</p>
+        ? <MainContainer><h1>Loading..</h1></MainContainer>
         : (
-          <div className="jumbotron col-sm-12 text-center" style={transparentBg}>
+          <MainContainer>
             <h1>Confirm Players</h1>
             <div className='col-sm-8 col-sm-offset-2'>
               <UserDetailsWrapper header='Player One'>
@@ -28,7 +29,7 @@ const ConfirmBattle = props => {
                 </Link>
               </div>
             </div>
-          </div>
+          </MainContainer>
         );
 }
 
